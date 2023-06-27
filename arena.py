@@ -3,7 +3,7 @@ class Kostka:
     Třída reprezentuje hrací kostku
 
         """
-def __init__(self, pocet sten):
+def __init__(self, pocet_sten):
     self.__pocet_sten = pocet_sten
 
 def vrat_pocet_sten(self):
