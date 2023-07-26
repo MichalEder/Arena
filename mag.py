@@ -23,8 +23,5 @@ class Mag(Bojovnik):
             self._mana = 0
         souper.bran_se(uder)
 
-        def mana_graficky(self):
-            return self.graficky_ukazatel(self._mana, self._max_mana)
-
-    def zivot_graficky(self):
-        return self.graficky_ukazatel(self._zivot, self._max_zivot)
+    def mana_graficky(self):
+        return self.graficky_ukazatel(self._mana, self._max_mana)

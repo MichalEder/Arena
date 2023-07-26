@@ -38,5 +38,5 @@ class Barbar(Bojovnik):
             zprava = zprava + f", který odrazil"
         self._nastav_zpravu(zprava)
 
-    def graficky_vztek(self):
+    def vztek_graficky(self):
         return self.graficky_ukazatel(self._vztek, self._max_vztek)

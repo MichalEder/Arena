@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2b389de-ba0e-481a-9ed8-5857eadf4d3c" name="Changes" comment="trida bojovnik funkcni">
-      <change afterPath="$PROJECT_DIR$/barbar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mag.py" afterDir="false" />
+    <list default="true" id="f2b389de-ba0e-481a-9ed8-5857eadf4d3c" name="Changes" comment="trida barbar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/arena.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/barbar.py" beforeDir="false" afterPath="$PROJECT_DIR$/barbar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bojovnik.py" beforeDir="false" afterPath="$PROJECT_DIR$/bojovnik.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mag.py" beforeDir="false" afterPath="$PROJECT_DIR$/mag.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690363656535</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="trida barbar">
+      <option name="closed" value="true" />
+      <created>1690368766458</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1690368766458</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,6 +134,7 @@
     <MESSAGE value="kostka" />
     <MESSAGE value="arena+prvni bojovnik" />
     <MESSAGE value="trida bojovnik funkcni" />
-    <option name="LAST_COMMIT_MESSAGE" value="trida bojovnik funkcni" />
+    <MESSAGE value="trida barbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="trida barbar" />
   </component>
 </project>

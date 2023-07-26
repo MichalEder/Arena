@@ -1,3 +1,6 @@
+from barbar import Barbar
+from mag import Mag
+
 class Arena:
     def __init__(self, bojovnik_1, bojovnik_2, kostka):
         self._bojovnik_1 = bojovnik_1
@@ -7,16 +10,29 @@ class Arena:
     def _vykresli(self):
         self._vycisti_obrazovku()
         print("-------------- Aréna -------------- \n")
-        print("Zdraví bojovníků: \n")
-        print(f"Jmeno: {self._bojovnik_1} HP: {self._bojovnik_1.zivot_graficky()} Rage: {self._bojovnik_1.graficky_vztek()}")
-        print(f"Jmeno: {self._bojovnik_2} HP: {self._bojovnik_2.zivot_graficky()} MP: {self._bojovnik_2.mana_graficky()}")
+        self._vypis_bojovnika(self._bojovnik_1)
+        print()
+        self._vypis_bojovnika(self._bojovnik_2)
+        print()
+
+    def _vypis_bojovnika(self, bojovnik):
+        print(bojovnik)
+        print(f"HP: {bojovnik.zivot_graficky()}")
+        if isinstance(bojovnik, Mag):
+            print(f"MP: {bojovnik.mana_graficky()}")
+        elif isinstance(bojovnik, Barbar):
+            print(f"Vtzek: {bojovnik.vztek_graficky()}")
+
+
     def _vycisti_obrazovku(self):
-        import sys as _sys
-        import subprocess as _subprocess
-        if _sys.platform.startswith("win"):
-            _subprocess.call(["cmd.exe", "/C", "cls"])
+        import os
+        if os.name == 'posix':  # For macOS and Linux
+            os.system('clear')
+        elif os.name == 'nt':  # For Windows
+            os.system('cls')
         else:
-            _subprocess.call(["clear"])
+            print("Sorry, your operating system is not supported.")
+
     def _vypis_zpravu(self, zprava):
         import time as _time
         print(zprava)
@@ -35,6 +51,7 @@ class Arena:
             self._vykresli()
             self._vypis_zpravu(self._bojovnik_1.vrat_posledni_zpravu())
             self._vypis_zpravu(self._bojovnik_2.vrat_posledni_zpravu())
+            self._vycisti_obrazovku()
             if self._bojovnik_2.je_nazivu():
                 self._bojovnik_2.utoc(self._bojovnik_1)
                 self._vykresli()
