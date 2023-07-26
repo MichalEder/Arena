@@ -16,9 +16,6 @@ class Bojovnik:
     def vrat_posledni_zpravu(self):
         return self._zprava
 
-
-
-
     def __str__(self):
         return str(self._jmeno)
 
@@ -26,11 +23,8 @@ class Bojovnik:
         return self._zivot > 0
 
     def zivot_graficky(self):
-        celkem = 20
-        pocet = int((self._zivot / self._max_zivot) * celkem)
-        if (pocet == 0 and self.je_nazivu()):
-            pocet = 1
-        return "[{0}{1}]".format("#" * pocet, " " * (celkem - pocet))
+        return self.graficky_ukazatel(self._zivot, self._max_zivot)
+
 
     def bran_se(self, uder):
         zraneni = uder - (self._obrana + self._kostka.hod())
@@ -49,9 +43,16 @@ class Bojovnik:
 
     def utoc(self, souper):
         uder = self._utok + self._kostka.hod()
-        zprava = f"{self._jmeno} se utocí za {uder}hp"
+        zprava = f"{self._jmeno} utocí za {uder}hp"
         self._nastav_zpravu(zprava)
         souper.bran_se(uder)
+
+    def graficky_ukazatel(self, aktualni, maximalni):
+        celkem = 20
+        pocet = int((aktualni/ maximalni) * celkem)
+        if (pocet == 0 and self.je_nazivu()):
+            pocet = 1
+        return "[{0}{1}]".format("#" * pocet, " " * (celkem - pocet))
 
 
 

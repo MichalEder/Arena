@@ -1,14 +1,12 @@
 from bojovnik import Bojovnik
 from kostka import Kostka
+from arena import Arena
+from mag import Mag
+from barbar import Barbar
+
 
 kostka = Kostka(10)
-
-bojovnik_1 = Bojovnik("Datarios", 100, 20, 10, kostka)
-bojovnik_2 = Bojovnik("Warlord", 100, 20, 10, kostka)
-
-print(f"Bojovnik: {bojovnik_1}")
-print(f"Je naživu: {bojovnik_1.je_nazivu()}")
-print(f"Počet životů: {bojovnik_1.zivot_graficky()}")
-bojovnik_1.utoc(bojovnik_2)
-print(bojovnik_1.vrat_posledni_zpravu())
-print(bojovnik_2.vrat_posledni_zpravu())
+bojovnik_1 = Barbar("Datarios", 100, 20, 10, kostka, 1.5)
+bojovnik_2 = Mag("Gandalf", 100, 20, 10, kostka, 100, 35)
+arena = Arena(bojovnik_1, bojovnik_2, kostka)
+arena.zapas()
