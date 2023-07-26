@@ -7,6 +7,16 @@ class Bojovnik:
         self._utok = utok
         self._obrana = obrana
         self._kostka = kostka
+        self._zprava = ""
+
+    def _nastav_zpravu(self, zprava):
+        self._zprava = zprava
+
+
+    def vrat_posledni_zpravu(self):
+        return self._zprava
+
+
 
 
     def __str__(self):
@@ -17,8 +27,32 @@ class Bojovnik:
 
     def zivot_graficky(self):
         celkem = 20
-        pocet = int(self._zivot / self._max_zivot) * celkem)
+        pocet = int((self._zivot / self._max_zivot) * celkem)
         if (pocet == 0 and self.je_nazivu()):
             pocet = 1
         return "[{0}{1}]".format("#" * pocet, " " * (celkem - pocet))
+
+    def bran_se(self, uder):
+        zraneni = uder - (self._obrana + self._kostka.hod())
+        zprava = f"{self._jmeno} se brání útoku za {uder}hp"
+        if zraneni > 0:
+            self._zivot -= zraneni
+            zprava = zprava + f" a utrpěl zranění {zraneni}"
+            if self._zivot < 0:
+                self._zivot = 0
+                zprava = zprava + f", které pro něj bylo fatální....umírá."
+            else:
+                zprava = zprava + f", které ještě přežil."
+        else:
+            zprava = zprava + f", který odrazil"
+        self._nastav_zpravu(zprava)
+
+    def utoc(self, souper):
+        uder = self._utok + self._kostka.hod()
+        zprava = f"{self._jmeno} se utocí za {uder}hp"
+        self._nastav_zpravu(zprava)
+        souper.bran_se(uder)
+
+
+
 
